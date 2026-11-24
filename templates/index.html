@@ -1,17 +1,53 @@
 <!doctype html>
+<!-- Indica que o documento usa HTML5 e está em português do Brasil -->
 <html lang="pt-br">
   <head>
+    <!-- Configurações básicas da página (acentos, autor, adaptação a telas e título na aba) -->
     <meta charset="utf-8">
+    <meta name="author" content="Erik Pereira Santos">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>GITERGEIST | Automatizador de Git</title>
+
+    <!-- Carrega o CSS do Bootstrap para facilitar o visual e o alinhamento -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
 
-    <!--  meu css  -->
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/estilo.css') }}" tupe="text/css" media="all">
-
+    <!-- Carrega o arquivo de estilo próprio do projeto (via Flask) -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/estilo.css') }}" type="text/css" media="all">
   </head>
-  <body>
-    <h1></h1>
+
+  <!-- Fundo escuro e tema escuro do Bootstrap na página inteira -->
+  <body class="bg-dark" data-bs-theme="dark">
+    <!-- Centraliza o conteúdo no meio da tela -->
+    <main class="container vh-100 d-flex align-items-center justify-content-center">
+      <section class="row">
+        <!-- Exibe o ícone/logo centralizado -->
+        <figure class="d-flex justify-content-center mb-5">
+          <img src="{{ url_for('static',filename='img/icone.png') }}"
+           alt="Logo" width="100" height="100">
+        </figure>
+
+        <!-- Título principal da página aumentado com a classe display-1 do Bootstrap -->
+        <div class="d-flex justify-content-center mb-5">
+          <h1 class="display-1 fw-bold">Gitercat</h1>
+        </div>
+
+        <!-- Formulário que envia os dados via POST para a mesma rota -->
+        <form action="" method="POST">
+          <!-- Campo de texto obrigatório para digitar o caminho da pasta do repositório -->
+          <div class="col-12">
+            <input type="text" class="form-control" placeholder="Informe o endereço do diretório local"
+            name="repositorio" required>
+          </div>
+
+          <!-- Botão centralizado para enviar o formulário e rodar commit + push -->
+          <div class="d-flex justify-content-center mt-5">
+            <button type="submit" class="btn btn-dark border border-dark-subtle col-4">Commitar e fazer push</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Carrega os scripts do Bootstrap no final da página -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
   </body>
 </html>

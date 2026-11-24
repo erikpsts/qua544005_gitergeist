@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "matcha";
+    src: url("../fonts/matcha.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: "matcha", "cat", "Gill Sans", Helvetica, sans-serif;
+    font-size: 64
+}
